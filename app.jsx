@@ -1,27 +1,20 @@
-  function MyApp(props){
-        return (
-            <div>
-            	 <h1>{props.title}</h1>
-                <h2>Good Morning: {props.name}</h2>
-            </div>
-
-        ) 
-    }
-    
-
-
-
-
-
-
-
+const EmailForm = React.createClass({
+handleClick() {
+	if (this.inputRef.checkValidity()) {
+	console.log(`Email Ok. Saving Email as ${this.inputRef.value}`);
+	}
+	},
+render() {
+		return (
+			<div>
+			<input type="email" ref={inputRef => this.inputRef = inputRef} />
+			<button onClick={this.handleClick}>Save</button>
+			</div>
+			);
+			}
+})
 
 
-
-
-
-
-    ReactDOM.render(
-        <MyApp title = "Welcome to World Of ReactJs" name = "John"/>,
-        document.getElementById("root")
-    )
+ReactDOM.render(
+<EmailForm />, 
+document.getElementById("root"));
