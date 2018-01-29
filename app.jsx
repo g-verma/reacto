@@ -1,7 +1,7 @@
-const EmailForm = React.createClass({
+const EventPass = React.createClass({
 handleClick() {
 	if (this.inputRef.checkValidity()) {
-	console.log(`Email Ok. Saving Email as ${this.inputRef.value}`);
+	console.log(`now passing ${this.inputRef.value}`);
 	}
 	},
 render() {
@@ -16,5 +16,5 @@ render() {
 
 
 ReactDOM.render(
-<EmailForm />, 
+<EventPass />, 
 document.getElementById("root"));
